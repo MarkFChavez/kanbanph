@@ -1,0 +1,20 @@
+<%= t('Home') %>
+
+<% if user_signed_in? %>
+	<div class="row">
+		<div class="span4">
+			<%= render "profile" %>
+		</div>
+
+		<div class="span8">
+			<div class='content-block'>
+				Displayed here are graphs, statistical reports about the projects
+			</div>
+
+			<div class='top20' id="annual" style="width:500px;height:350px">
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
