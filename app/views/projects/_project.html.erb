@@ -6,6 +6,9 @@
 
 	<div class="left20">
 		<h3> <%= project.name %> <small> <%= project.desc %> </small> </h3>
+
+		<strong class="italic"> This project started <%= distance_of_time_in_words(Time.now, project.created_at) %> ago. </strong>
+
 		<div class="project-block bottom20 well" style="width:500px">
 			<%= link_to "View Project", project, class:"btn btn-primary" %>
 			&nbsp;
@@ -15,3 +18,5 @@
 
 	<div class="clearfix"></div>
 <% end %>
+
+<hr />

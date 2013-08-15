@@ -7,26 +7,45 @@
 
 	<div class="span8">
 		<div class="span12" style="margin-left:-70px">
-			<div class="span3">
-				<div class="task-block">
-					<h3> <blockquote style="color:#666"> TODO </blockquote> </h3>
-					<hr />
-				</div>
-			</div>
 
-			<div class="span3">
-				<div class="task-block">
-					<h3> <blockquote style="color:#666"> DOING </blockquote> </h3>
-					<hr />
-				</div>
-			</div>
+		<p class="lead"> Kanban Board for <b> <%= @project.name.upcase %> </b> </p>
 
-			<div class="span3">
-				<div class="task-block">
-					<h3> <blockquote style="color:#666"> DONE </blockquote> </h3>
-					<hr />
-				</div>
+		<div class="span3">
+			<div class="task-block">
+				<h3> <blockquote style="color:#666"> TODO <small> <%= link_to "add todo task", "#", class:"task-link", data: {toggle:"modal",target:"#taskModal",task:"todo"} %> </small> </blockquote> </h3>
+				<hr />
+			</div>
+		</div>
+
+		<div class="span3">
+			<div class="task-block">
+				<h3> <blockquote style="color:#666"> DOING <small> <%= link_to "add doing task", "#", class:"task-link", data: {toggle:"modal",target:"#taskModal",task:"doing"} %> </small> </blockquote> </h3>
+				<hr />
+			</div>
+		</div>
+
+		<div class="span3">
+			<div class="task-block">
+				<h3> <blockquote style="color:#666"> DONE <small> <%= link_to "add done task", "#taskModal", class:"task-link", data: {toggle:"modal",task:"done"} %> </small> </blockquote> </h3>
+				<hr />
 			</div>
 		</div>
 	</div>
+</div>
+
+<!-- Modal -->
+<div id="taskModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	 <div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+		  <h3 id="myModalLabel"> Add Task </h3>
+	  </div>
+
+	  <div class="modal-body">
+		  <h2> Form to be displayed here </h2>
+	  </div>
+
+ 	     <div class="modal-footer">
+		 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	         <button class="btn btn-primary">Save changes</button>
+	     </div>
 </div>

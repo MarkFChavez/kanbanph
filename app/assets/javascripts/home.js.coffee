@@ -4,6 +4,10 @@
 #
 
 init = ->
+
+	$(".task-link").on 'click', (e) ->
+		taskType = $(@).data 'task'
+
 	new Highcharts.Chart
 		chart:
 			renderTo: "annual"
