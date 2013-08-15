@@ -7,6 +7,8 @@ init = ->
 
 	$(".task-link").on 'click', (e) ->
 		taskType = $(@).data 'task'
+		$("#taskType").text taskType.toUpperCase()
+		$("#task_task_type").val(taskType)
 
 	new Highcharts.Chart
 		chart:

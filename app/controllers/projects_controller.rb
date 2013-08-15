@@ -8,6 +8,10 @@ class ProjectsController < ApplicationController
 
   def show
 	  @project = current_user.projects.find(params[:id])
+	  @task = Task.new
+	  @todo = @project.tasks.todo
+	  @doing = @project.tasks.doing
+	  @done = @project.tasks.done
   end
 
   def new

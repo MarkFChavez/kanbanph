@@ -1,10 +1,15 @@
 Kanban::Application.routes.draw do
+  get "tasks/create"
+  get "tasks/update"
+  get "tasks/destroy"
   devise_for :users do
 	  root to: "devise/sessions#new"
   end
 
   resources :home
-  resources :projects
+  resources :projects do
+	  resources :tasks
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
