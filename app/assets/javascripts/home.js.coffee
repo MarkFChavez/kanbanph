@@ -4,11 +4,6 @@
 #
 
 init = ->
-
-	$("#projects").delegate '.project', 'click', ->
-	#	$(".project-block").hide()
-		$(@).find(".project-block").toggle()
-
 	new Highcharts.Chart
 		chart:
 			renderTo: "annual"

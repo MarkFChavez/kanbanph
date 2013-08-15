@@ -6,6 +6,37 @@
 	</div>
 
 	<div class="span8">
+		<p class="lead"> Create a Project </p>
+
+		<div class="top20">
+			<%= form_for @project do |f| %>
+
+				<% unless @project.errors.empty? %>
+					<div class="alert alert-error">
+						<div>
+							<h2 style="color:red"> <%= pluralize @project.errors.size, "error" %> found. </h2>
+							<ul class="unstyled">
+								<% @project.errors.full_messages.each do |err| %>
+									<li> <%= err %> </li>
+								<% end %>
+							</ul>
+						</div>
+					</div>
+				<% end %>
+
+				<%= f.label :name %>
+				<%= f.text_field :name, placeholder: "Enter project name" %>
+
+				<br />
+
+				<%= f.label :desc %>
+				<%= f.text_area :desc, rows: 3, placeholder: "Enter a description for this project" %>
+
+				<br />
+
+				<%= f.submit "Create", class:"btn" %>
+			<% end %>
+		</div>
 	</div>
 </div>
 

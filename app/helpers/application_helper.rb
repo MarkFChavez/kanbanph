@@ -11,6 +11,10 @@ module ApplicationHelper
 
 	def g(user, klazz, options={})
 		options[:default] = 'https://assets.github.com/images/gravatars/gravatar-140.png'
-		gravatar_image_tag(user.email, title:user.email, class:klazz, gravatar: options)
+		if !user.nil?
+			gravatar_image_tag(user.email, title:user.email, class:klazz, gravatar: options)
+		else
+			gravatar_image_tag('default', title:'default', class:klazz, gravatar: options)
+		end
 	end
 end

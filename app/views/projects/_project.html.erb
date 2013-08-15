@@ -1,9 +1,17 @@
 
 <%= div_for project, class:"bottom20" do %>
-	<h3> <%= project.name %> <small> <%= project.desc %> </small> </h3>
-	<div class="project-block bottom20 well">
-		<%= link_to "View Project", project, class:"btn btn-primary" %>
-		&nbsp;
-		<%= link_to "Delete Project", project, method: :delete, class:"btn btn-danger", confirm:"Delete this project?" %>
+	<div class='pull-right'>
+		<%= g(nil, 'img-circle', size: 96) %>
 	</div>
+
+	<div class="left20">
+		<h3> <%= project.name %> <small> <%= project.desc %> </small> </h3>
+		<div class="project-block bottom20 well" style="width:500px">
+			<%= link_to "View Project", project, class:"btn btn-primary" %>
+			&nbsp;
+			<%= link_to "Delete Project", project, method: :delete, class:"btn btn-danger", confirm:"Delete this project?" %>
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
 <% end %>
